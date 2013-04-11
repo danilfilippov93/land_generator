@@ -1,80 +1,59 @@
-#include <GL/glut.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void draw(void) {
+#include <GL/glew.h>
 
-    // Black background
-    glClearColor(0.2f,0.2f,0.2f,1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glRotatef(6,2,3,1);
-    glBegin(GL_QUADS);
-    glColor3f(1,0,0);
-    glVertex3f(-50,-50,-50);
-    glVertex3f(50,-50,-50);
-    glVertex3f(50,50,-50);
-    glVertex3f(-50,50,-50);
-    glVertex3f(-50,-50,-50);
-    glEnd();
+#include <GL/glfw.h>
 
-    glBegin(GL_QUADS);
-    glColor3f(1,1,0);
-    glVertex3f(-50,-50,50);
-    glVertex3f(50,-50,50);
-    glVertex3f(50,50,50);
-    glVertex3f(-50,50,50);
-    glVertex3f(-50,-50,50);
-    glEnd();
+int main( void )
+{
+    // Initialise GLFW
+    if( !glfwInit() )
+    {
+        fprintf( stderr, "Failed to initialize GLFW\n" );
+        return -1;
+    }
 
-    glBegin(GL_LINES);
-    glColor3f(0,0,0);
-    glVertex3f(-50,-50,50);
-    glVertex3f(-50,-50,-50);
-    glVertex3f(50,-50,50);
-    glVertex3f(50,-50,-50);
-    glVertex3f(50,50,50);
-    glVertex3f(50,50,-50);
-    glVertex3f(-50,50,50);
-    glVertex3f(-50,50,-50);
-    glEnd();
+    glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
+    glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE,GL_TRUE);
+    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
+    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 3);
+    glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    glutSwapBuffers();
-    glFlush();
+    // Open a window and create its OpenGL context
+    if( !glfwOpenWindow( 1024, 768, 0,0,0,0, 32,0, GLFW_WINDOW ) )
+    {
+        fprintf( stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n" );
+        glfwTerminate();
+        return -1;
+    }
 
-}
+    // Initialize GLEW
+    if (glewInit() != GLEW_OK) {
+        fprintf(stderr, "Failed to initialize GLEW\n");
+        return -1;
+    }
 
-void timer(int a){
-	draw();
-	glutTimerFunc(10,timer,a);
-}
-//Main program
+    glfwSetWindowTitle( "Playground" );
 
-int main(int argc, char **argv) {
+    // Ensure we can capture the escape key being pressed below
+    glfwEnable( GLFW_STICKY_KEYS );
 
-    glutInit(&argc, argv);
+    // Dark blue background
+    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 
-    /*Setting up  The Display
-    /    -RGB color model + Alpha Channel = GLUT_RGBA
-    */
-    glutInitDisplayMode(GLUT_RGBA|GLUT_SINGLE);
+    do{
+        // Draw nothing, see you in tutorial 2 !
 
-    //Configure Window Postion
-    glutInitWindowPosition(50, 25);
+        // Swap buffers
+        glfwSwapBuffers();
 
-    //Configure Window Size
-    glutInitWindowSize(480,480);
+    } // Check if the ESC key was pressed or the window was closed
+    while( glfwGetKey( GLFW_KEY_ESC ) != GLFW_PRESS &&
+           glfwGetWindowParam( GLFW_OPENED ) );
 
-    //Create Window
-    glutCreateWindow("Cube");
+    // Close OpenGL window and terminate GLFW
+    glfwTerminate();
 
-    glClearColor(0, 0, 0.2f, 1);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(-100,100,-100,100,-100,100);
-
-
-    //Call to the drawing function
-    glutDisplayFunc(draw);
-    timer(0);
-    // Loop require by OpenGL
-    glutMainLoop();
     return 0;
 }
