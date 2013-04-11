@@ -1,53 +1,30 @@
-COMPILER=G++
-
-# todo: object files into output path, processing c / c++ files in the same time (?), nested directories for source files (?)
-C = cpp
-OUTPUT_PATH = Build/
-SOURCE_PATH = src/
-EXE = $(OUTPUT_PATH)land_generator
-UNAME := $(shell uname)
+TARGET=land_generator
+BUILDFOLDER=Build
+SOURCES=$(wildcard $(TARGET)/*.cpp)
+OBJECTS=$(SOURCES:%.cpp=%.o)
+UNAME=$(shell uname)
+CC=g++
 
 ifeq ($(UNAME),Linux)
-OBJ = o
-COPT = -O2
-CCMD = g++
-OBJFLAG = -o
-EXEFLAG = -o
-INCLUDES =
-LIBS = -lGLEW -lglfw -lGL
-FRAMEWORKS =
-LIBPATH =
-CPPFLAGS = $(COPT) -g $(INCLUDES)
-LDFLAGS = $(LIBPATH) -g $(LIBS)
-DEP = dep
+CFLAGS+=
+LDFLAGS+= -lGL -lGLEW -lglfw
+FRAMEWORKS=
 else
-OBJ = o
-COPT = -O2
-CCMD = g++
-OBJFLAG = -o
-EXEFLAG = -o
-INCLUDES =
-LIBS = -lGLEW -lglfw
-FRAMEWORKS = -framework OpenGL
-LIBPATH =
-CPPFLAGS = $(COPT) -g $(INCLUDES)
-LDFLAGS = $(LIBPATH) -g $(LIBS)
-DEP = dep
+CFLAGS+=
+LDFLAGS+= -lGLEW -lglfw
+FRAMEWORKS= -framework OpenGL
 endif
 
-OBJS := $(patsubst %.$(C),%.$(OBJ),$(wildcard $(SOURCE_PATH)*.$(C)))
 
-%.$(OBJ):%.$(C)
-	@echo Compiling $(basename $<)...
-	$(CCMD) -c $(CPPFLAGS) $(CXXFLAGS) $< $(OBJFLAG)$@
+all: $(TARGET)
 
-all: $(OBJS)
-	@echo Linking...
-	@echo $(OS)
-	$(CCMD) $(LDFLAGS) $^ $(LIBS) $(FRAMEWORKS) $(EXEFLAG) $(EXE)
+$(OBJECTS): $(SOURCES)
+
+$(TARGET): $(OBJECTS)
+		mkdir -p $(BUILDFOLDER)
+		$(CC) -o $(BUILDFOLDER)/$(TARGET) $(LDFLAGS) $(OBJECTS) $(LOADLIBES) $(LDLIBS) $(FRAMEWORKS)
 
 clean:
-	rm -rf $(SOURCE_PATH)*.$(OBJ) $(EXE)
+		$(RM) $(OBJECTS) $(BUILDFOLDER)/$(TARGET) $(BUILDFOLDER)
 
-rebuild: clean all
-#rebuild is not entirely correct
+.PHONY: all clean
