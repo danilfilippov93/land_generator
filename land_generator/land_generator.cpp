@@ -1,26 +1,7 @@
-// Include standard headers
-#include <stdio.h>
-#include <stdlib.h>
-
-// Include GLEW
-#include <GL/glew.h>
-
-// Include GLFW
-#include <GL/glfw.h>
-
-// Include GLM
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-using namespace glm;
 
 int main(int argc, const char* argv[])
 {
-    // Initialise GLFW
-    if( !glfwInit() )
-    {
-        fprintf( stderr, "Failed to initialize GLFW\n" );
-        return -1;
-    }
+
 
     glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 2);
