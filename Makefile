@@ -5,38 +5,34 @@ C = cpp
 OUTPUT_PATH = Build/
 SOURCE_PATH = src/
 EXE = $(OUTPUT_PATH)land_generator
+UNAME := $(shell uname)
 
-ifeq ($(COMPILER), G++)
-  ifeq ($(OS),Windows_NT)
-    OBJ = obj
-  else
-    OBJ = o
-  endif
-  COPT = -O2
-  CCMD = g++
-  OBJFLAG = -o
-  EXEFLAG = -o
-# INCLUDES = -I../.includes
-  INCLUDES =
-# LIBS = -lgc
-  LIBS =
-# LIBPATH = -L../gc/.libs
-  LIBPATH =
-  CPPFLAGS = $(COPT) -g $(INCLUDES)
-  LDFLAGS = $(LIBPATH) -g $(LIBS)
-  DEP = dep
+ifeq ($(UNAME),Linux)
+OBJ = o
+COPT = -O2
+CCMD = g++
+OBJFLAG = -o
+EXEFLAG = -o
+INCLUDES =
+LIBS = -lGLEW -lglfw -lGL
+FRAMEWORKS =
+LIBPATH =
+CPPFLAGS = $(COPT) -g $(INCLUDES)
+LDFLAGS = $(LIBPATH) -g $(LIBS)
+DEP = dep
 else
-  OBJ = obj
-  COPT = /O2
-  CCMD = cl
-  OBJFLAG = /Fo
-  EXEFLAG = /Fe
-# INCLUDES = /I..\\.includes
-  INCLUDES =
-# LIBS = ..\\.libs\\libgc.lib
-  LIBS =
-  CPPFLAGS = $(COPT) /DEBUG $(INCLUDES)
-  LDFLAGS = /DEBUG
+OBJ = o
+COPT = -O2
+CCMD = g++
+OBJFLAG = -o
+EXEFLAG = -o
+INCLUDES =
+LIBS = -lGLEW -lglfw
+FRAMEWORKS = -framework OpenGL
+LIBPATH =
+CPPFLAGS = $(COPT) -g $(INCLUDES)
+LDFLAGS = $(LIBPATH) -g $(LIBS)
+DEP = dep
 endif
 
 OBJS := $(patsubst %.$(C),%.$(OBJ),$(wildcard $(SOURCE_PATH)*.$(C)))
@@ -47,7 +43,8 @@ OBJS := $(patsubst %.$(C),%.$(OBJ),$(wildcard $(SOURCE_PATH)*.$(C)))
 
 all: $(OBJS)
 	@echo Linking...
-	$(CCMD) $(LDFLAGS) $^ $(LIBS) $(EXEFLAG) $(EXE)
+	@echo $(OS)
+	$(CCMD) $(LDFLAGS) $^ $(LIBS) $(FRAMEWORKS) $(EXEFLAG) $(EXE)
 
 clean:
 	rm -rf $(SOURCE_PATH)*.$(OBJ) $(EXE)
