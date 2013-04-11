@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdexcept>
+#include "Display.h"
+
 // Include GLEW
 #include <GL/glew.h>
 
@@ -12,19 +14,11 @@
 using namespace glm;
 using namespace std;
 
-class Display {
-    public:
-    Display();
-    private:
-    // Initializations
-    void InitGLFW();
-    void InitGLEW();
-};
-
 Display::Display()
 {
     this->InitGLFW();
-    this->InitGLEW();
+    this->InitWindow();
+    //this->OpenWindow();
 }
 
 void Display::InitGLFW()
@@ -42,3 +36,42 @@ void Display::InitGLEW()
         throw runtime_error("Faild to initialize GLEW");
     }
 }
+
+void Display::InitWindow()
+{
+    glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
+    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 2);
+    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 1);
+    
+    glfwSetWindowTitle( "My Land" );
+
+    glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+
+    glfwEnable( GLFW_STICKY_KEYS );
+}
+
+void Display::UpdateLoop()
+{
+    do{
+        this->Draw();
+    } 
+    while( glfwGetKey( GLFW_KEY_ESC ) != GLFW_PRESS &&
+    glfwGetWindowParam( GLFW_OPENED ) );
+}
+
+void Display::OpenWindow(){
+    if( !glfwOpenWindow( 600, 400, 0,0,0,0, 32,0, GLFW_WINDOW ) )
+    {
+        glfwTerminate();
+        throw runtime_error("Failed in open window");
+    }
+    
+    this->InitGLEW();
+    this->UpdateLoop();
+}
+
+void Display::Draw()
+{
+    glfwSwapBuffers();
+}
+
