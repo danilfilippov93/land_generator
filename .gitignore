@@ -116,6 +116,10 @@ xcuserdata
 
 .idea/workspace.xml
 .idea/tasks.xml
+####
+# Object files. Never need em.
+
+*.o
 
 ####
 # Cocoapods: cocoapods.org
