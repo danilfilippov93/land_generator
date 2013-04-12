@@ -11,6 +11,7 @@
 		5805BFF31717667300D18FCA /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805BFF11717667300D18FCA /* libglfw.dylib */; };
 		586489621717D41400672212 /* land_generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213A7FCA911B0B477BA99C /* land_generator.cpp */; };
 		586489631717D5CF00672212 /* Display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2133B86872A57713C118B2 /* Display.cpp */; };
+		586489651717D97000672212 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586489641717D97000672212 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		5805BFF01717667300D18FCA /* libGLEW.1.9.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.9.0.dylib; path = /usr/local/Cellar/glew/1.9.0/lib/libGLEW.1.9.0.dylib; sourceTree = "<absolute>"; };
 		5805BFF11717667300D18FCA /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = /usr/local/Cellar/glfw/2.7.7/lib/libglfw.dylib; sourceTree = "<absolute>"; };
+		586489641717D97000672212 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		BE2130FA50F153D8490E9792 /* Land Generator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Land Generator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2133B86872A57713C118B2 /* Display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Display.cpp; sourceTree = "<group>"; };
 		BE213A7FCA911B0B477BA99C /* land_generator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = land_generator.cpp; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586489651717D97000672212 /* OpenGL.framework in Frameworks */,
 				5805BFF21717667300D18FCA /* libGLEW.1.9.0.dylib in Frameworks */,
 				5805BFF31717667300D18FCA /* libglfw.dylib in Frameworks */,
 			);
@@ -50,6 +53,7 @@
 		5805BFF41717668000D18FCA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				586489641717D97000672212 /* OpenGL.framework */,
 				5805BFF01717667300D18FCA /* libGLEW.1.9.0.dylib */,
 				5805BFF11717667300D18FCA /* libglfw.dylib */,
 			);
