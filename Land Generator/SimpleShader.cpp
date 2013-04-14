@@ -7,7 +7,7 @@
 
 #include "SimpleShader.hpp"
 
-SimpleShader::SimpleShader() : Shader("shader.vertexshader","shader.fragmentshader")
+SimpleShader::SimpleShader() : Shader("shader.vertexshader", "shader.fragmentshader")
 {
 	// Get a handle for our "MVP" uniform
 	modelViewProjectionUniformID = glGetUniformLocation(shaderID, "MVP");

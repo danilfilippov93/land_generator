@@ -14,7 +14,7 @@
 
 class SimpleShader : public Shader
 {
-	public:
+public:
 	SimpleShader();
 
 	GLint modelViewProjectionUniformID;

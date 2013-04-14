@@ -12,7 +12,7 @@
 		5811D0E2171B18850003B9E3 /* SimpleShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5811D0DE171B18850003B9E3 /* SimpleShader.cpp */; };
 		583396C4171AF1FC00DEDDE9 /* shader.fragmentshader in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE21365F2093DB85860FF148 /* shader.fragmentshader */; };
 		583396C5171AF1FC00DEDDE9 /* shader.vertexshader in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE2135C28A75C4918F8BA0CC /* shader.vertexshader */; };
-		586F94D8171AD45D00E3C235 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 586F94D5171AD45D00E3C235 /* Triangle.cpp */; };
+		586F94D8171AD45D00E3C235 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 586F94D5171AD45D00E3C235 /* GameObject.cpp */; };
 		58ED3BA3171AD32B00450165 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58ED3BA2171AD32B00450165 /* main.cpp */; };
 		58ED3BB9171AD3AC00450165 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BB8171AD3AC00450165 /* OpenGL.framework */; };
 		58ED3BBC171AD3E600450165 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BBA171AD3E600450165 /* libGLEW.a */; };
@@ -50,8 +50,8 @@
 		5811D0DD171B18850003B9E3 /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		5811D0DE171B18850003B9E3 /* SimpleShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleShader.cpp; sourceTree = "<group>"; };
 		5811D0DF171B18850003B9E3 /* SimpleShader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleShader.hpp; sourceTree = "<group>"; };
-		586F94D5171AD45D00E3C235 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
-		586F94D6171AD45D00E3C235 /* Triangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Triangle.hpp; sourceTree = "<group>"; };
+		586F94D5171AD45D00E3C235 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		586F94D6171AD45D00E3C235 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		586F94D9171AD48300E3C235 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
 		58ED3B9F171AD32B00450165 /* Land Generator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Land Generator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ED3BA2171AD32B00450165 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 			children = (
 				5811D0E4171B18990003B9E3 /* Display */,
 				586F94D9171AD48300E3C235 /* Makefile */,
-				586F94D5171AD45D00E3C235 /* Triangle.cpp */,
-				586F94D6171AD45D00E3C235 /* Triangle.hpp */,
+				586F94D5171AD45D00E3C235 /* GameObject.cpp */,
+				586F94D6171AD45D00E3C235 /* GameObject.hpp */,
 				58ED3BA2171AD32B00450165 /* main.cpp */,
 				BE213FA6795F5775A3E43010 /* common */,
 				BE2132789BA2386526129C93 /* GL.hpp */,
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58ED3BA3171AD32B00450165 /* main.cpp in Sources */,
-				586F94D8171AD45D00E3C235 /* Triangle.cpp in Sources */,
+				586F94D8171AD45D00E3C235 /* GameObject.cpp in Sources */,
 				BE21303520791D104F6B79AE /* quaternion_utils.cpp in Sources */,
 				BE2138A447ABECB32F3D26B2 /* shaderUtils.cpp in Sources */,
 				BE2137576136A3C797CBCD2A /* objloader.cpp in Sources */,
@@ -310,6 +310,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/glew/1.9.0/lib,
 					/usr/local/Cellar/glfw/2.7.7/lib,
+					/usr/local/Cellar/boost/1.53.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -322,6 +323,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/glew/1.9.0/lib,
 					/usr/local/Cellar/glfw/2.7.7/lib,
+					/usr/local/Cellar/boost/1.53.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

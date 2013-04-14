@@ -2,15 +2,16 @@
 #define Triangle_H
 
 #include "GL.hpp"
-class Triangle {
-    public:
-    Triangle();
+
+class GameObject
+{
+public:
+	GameObject();
 	void InitTriangle();
 
-    GLuint vertexBuffer;
+	GLuint vertexBuffer;
 
 	glm::vec3 position;
-	glm::vec3 rotation;
 };
 
 #endif

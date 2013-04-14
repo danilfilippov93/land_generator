@@ -3,21 +3,23 @@
 
 #include <glm/glm.hpp>
 #include "SimpleShader.hpp"
-
-class Triangle;
+#include <vector>
+#include "GameObject.hpp"
 
 class Display
 {
 public:
 	Display();
 	void OpenWindow();
-	Triangle *triangle;
+	void AddGameObjects(GameObject *gameObject);
+	void Run();
 
 protected:
 	void Draw();
 
 	SimpleShader *shader;
 	glm::mat4 mvp;
+	std::vector<GameObject*> *gameObjectsArray;
 
 private:
 	// Initializations
@@ -26,9 +28,12 @@ private:
 	void InitWindow();
 	void InitShaders();
 	void InitModelViewProjectionMatrix();
+	void InitGameObjectsArray();
 
 	// Update
 	void UpdateLoop();
+	void DrawObject(GameObject *object);
+
 
 };
 

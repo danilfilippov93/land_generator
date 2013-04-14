@@ -2,27 +2,25 @@
 #include <GL/glew.h>
 
 // Include GLFW
-#include <GL/glfw.h>
 
 // Include GLM
 #include <glm/glm.hpp>
 
-#include "Triangle.hpp"
-#include "shaderUtils.hpp"
+#include "GameObject.hpp"
 
-Triangle::Triangle()
+GameObject::GameObject()
 {
-	vertexBuffer=0;
-	position = glm::vec3(0,0,0);
+	vertexBuffer = 0;
+	position = glm::vec3(0, 0, 0);
 	InitTriangle();
 }
 
-void Triangle::InitTriangle()
+void GameObject::InitTriangle()
 {
 	static const GLfloat g_vertex_buffer_data[] = {
 			-1.0f, -1.0f, 0.0f,
 			1.0f, -1.0f, 0.0f,
-			0.0f,  1.0f, 0.0f,
+			0.0f, 1.0f, 0.0f,
 	};
 
 	// Generate 1 buffer, put the resulting identifier in vertexBuffer

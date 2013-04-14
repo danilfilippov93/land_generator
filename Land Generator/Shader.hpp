@@ -11,7 +11,7 @@
 
 #include "GL.hpp"
 
-class  Shader
+class Shader
 {
 public:
 	Shader(char const *vertex, char const *fragment);
