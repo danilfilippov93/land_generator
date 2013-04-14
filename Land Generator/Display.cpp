@@ -78,6 +78,13 @@ void Display::UpdateModelViewMatrix()
 	mvp = Projection * View * Model; // Remember, matrix multiplication is the other way around
 }
 
+void GLFWCALL Display::ResizeWindow(int x,int y)
+{
+	glfwSetWindowSize(x, y);
+	glViewport(0, 0, x, y);
+
+}
+
 void Display::OpenWindow()
 {
 	InitWindow();
@@ -88,12 +95,14 @@ void Display::OpenWindow()
 		throw runtime_error("Failed in open window");
 	}
 	glfwSetWindowTitle("My Land");
+	glfwSetWindowSizeCallback(ResizeWindow);
 
 	InitGLEW();
 	InitShaders();
 	UpdateModelViewMatrix();
-
 }
+
+
 
 void Display::Run()
 {

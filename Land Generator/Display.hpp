@@ -16,7 +16,7 @@ public:
 
 protected:
 	void Draw();
-
+	static void GLFWCALL ResizeWindow(int x,int y);
 	SimpleShader *shader;
 	glm::mat4 mvp;
 	std::vector<GameObject *> *gameObjectsArray;
