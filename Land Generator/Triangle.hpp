@@ -1,14 +1,16 @@
 #ifndef Triangle_H
 #define Triangle_H
 
+#include "GL.hpp"
 class Triangle {
     public:
     Triangle();
-    void Draw();
 	void InitTriangle();
 
-    unsigned int vertexBuffer;
-	unsigned int programID;
+    GLuint vertexBuffer;
+
+	glm::vec3 position;
+	glm::vec3 rotation;
 };
 
 #endif
