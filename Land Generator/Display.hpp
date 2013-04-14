@@ -27,11 +27,11 @@ private:
 	void InitGLEW();
 	void InitWindow();
 	void InitShaders();
-	void InitModelViewProjectionMatrix();
 	void InitGameObjectsArray();
 
 	// Update
 	void UpdateLoop();
+	void UpdateModelViewMatrix();
 	void DrawObject(GameObject *object);
 
 

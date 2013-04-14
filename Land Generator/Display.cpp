@@ -3,10 +3,14 @@
 
 // Include GLM
 #include <glm/gtc/matrix_transform.hpp>
+#include "controls.hpp"
 
 #ifndef __APPLE__
 #include <stdexcept>
 #endif
+
+#define WIDTH 600
+#define HEIGHT 400
 
 using namespace glm;
 using namespace std;
@@ -53,6 +57,9 @@ void Display::InitWindow()
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 1);
 
 	glfwEnable(GLFW_STICKY_KEYS);
+	glfwSetMousePos(int(WIDTH/2), int(HEIGHT/2));
+
+
 }
 
 void Display::InitShaders()
@@ -60,16 +67,13 @@ void Display::InitShaders()
 	shader = new SimpleShader();
 }
 
-void Display::InitModelViewProjectionMatrix()
+void Display::UpdateModelViewMatrix()
 {
+	computeMatricesFromInputs();
 	// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
-	mat4 Projection = perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
+	mat4 Projection = getProjectionMatrix();
 	// Camera matrix
-	mat4 View = lookAt(
-			vec3(0, 0, 10), // Camera is at (4,3,3), in World Space
-			vec3(0, 0, 0), // and looks at the origin
-			vec3(0, 1, 0)  // Head is up (set to 0,-1,0 to look upside-down)
-	);
+	mat4 View = getViewMatrix();
 	// Model matrix : an identity matrix (model will be at the origin)
 	mat4 Model = mat4(1.0f);
 	// Our ModelViewProjection : multiplication of our 3 matrices
@@ -80,7 +84,7 @@ void Display::OpenWindow()
 {
 	InitWindow();
 
-	if (!glfwOpenWindow(600, 400, 0, 0, 0, 0, 32, 0, GLFW_WINDOW))
+	if (!glfwOpenWindow(WIDTH, HEIGHT, 0, 0, 0, 0, 32, 0, GLFW_WINDOW))
 	{
 		glfwTerminate();
 		throw runtime_error("Failed in open window");
@@ -89,7 +93,7 @@ void Display::OpenWindow()
 
 	InitGLEW();
 	InitShaders();
-	InitModelViewProjectionMatrix();
+	UpdateModelViewMatrix();
 
 }
 
@@ -102,6 +106,7 @@ void Display::UpdateLoop()
 {
 	do
 	{
+		UpdateModelViewMatrix();
 		Draw();
 	}
 	while (glfwGetKey(GLFW_KEY_ESC) != GLFW_PRESS &&
