@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-#include "Display.h"
+#include "Display.hpp"
 
 // Include GLEW
 #include <GL/glew.h>
@@ -11,7 +11,7 @@
 // Include GLM
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "Triangle.h"
+#include "Triangle.hpp"
 
 using namespace glm;
 using namespace std;

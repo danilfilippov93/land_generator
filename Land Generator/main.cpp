@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "Display.h"
+#include "Display.hpp"
 
 int main(int argc, const char * argv[])
 {

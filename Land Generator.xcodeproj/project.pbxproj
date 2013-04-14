@@ -41,9 +41,9 @@
 
 /* Begin PBXFileReference section */
 		586F94D3171AD45D00E3C235 /* Display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Display.cpp; sourceTree = "<group>"; };
-		586F94D4171AD45D00E3C235 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+		586F94D4171AD45D00E3C235 /* Display.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Display.hpp; sourceTree = "<group>"; };
 		586F94D5171AD45D00E3C235 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
-		586F94D6171AD45D00E3C235 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		586F94D6171AD45D00E3C235 /* Triangle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Triangle.hpp; sourceTree = "<group>"; };
 		586F94D9171AD48300E3C235 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
 		58ED3B9F171AD32B00450165 /* Land Generator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Land Generator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ED3BA2171AD32B00450165 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -108,9 +108,9 @@
 			children = (
 				586F94D9171AD48300E3C235 /* Makefile */,
 				586F94D3171AD45D00E3C235 /* Display.cpp */,
-				586F94D4171AD45D00E3C235 /* Display.h */,
+				586F94D4171AD45D00E3C235 /* Display.hpp */,
 				586F94D5171AD45D00E3C235 /* Triangle.cpp */,
-				586F94D6171AD45D00E3C235 /* Triangle.h */,
+				586F94D6171AD45D00E3C235 /* Triangle.hpp */,
 				58ED3BA2171AD32B00450165 /* main.cpp */,
 				BE21365F2093DB85860FF148 /* shader.fragmentshader */,
 				BE2135C28A75C4918F8BA0CC /* shader.vertexshader */,

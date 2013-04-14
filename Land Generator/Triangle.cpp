@@ -7,7 +7,7 @@
 // Include GLM
 #include <glm/glm.hpp>
 
-#include "Triangle.h"
+#include "Triangle.hpp"
 #import "shader.hpp"
 
 Triangle::Triangle()

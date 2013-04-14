@@ -1,4 +1,5 @@
-TARGET=land_generator
+TARGET=LandGenerator
+SOURCEFOLDER=Land\ Generator
 BUILDFOLDER=Build
 SOURCES=$(wildcard $(TARGET)/*.cpp)
 OBJECTS=$(SOURCES:%.cpp=%.o)
@@ -16,15 +17,32 @@ FRAMEWORKS= -framework OpenGL
 endif
 
 
-all: $(TARGET)
+all: .FORCE  		#Maybe this part should be refactored
+	make clean		
+	make move_src
+	make $(TARGET)
 
-$(OBJECTS): $(SOURCES)
+move_src:
+	mkdir -p $(TARGET)
 
-$(TARGET): $(OBJECTS)
+	ln -s $(PWD)/$(SOURCEFOLDER)/*.cpp $(PWD)/$(SOURCEFOLDER)/*.hpp  $(TARGET)
+	ln -s $(PWD)/$(SOURCEFOLDER)/*/*.cpp $(PWD)/$(SOURCEFOLDER)/*/*.hpp $(TARGET)
+
+
+$(TARGET): $(OBJECTS) .FORCE
 		mkdir -p $(BUILDFOLDER)
 		$(CC) -o $(BUILDFOLDER)/$(TARGET) $(OBJECTS) $(LOADLIBES) $(LDLIBS) $(FRAMEWORKS) $(LDFLAGS)
+		cp ./$(SOURCEFOLDER)/*.fragmentshader ./$(SOURCEFOLDER)/*.vertexshader ./$(BUILDFOLDER)
+
+$(OBJECTS): $(SOURCES) .FORCE
 
 clean:
 		$(RM) $(OBJECTS) $(BUILDFOLDER)/$(TARGET)
+		$(RM) -r $(TARGET)
 		$(RM) -r $(BUILDFOLDER)
-.PHONY: all clean
+
+run:
+	$(shell cd ./$(BUILDFOLDER); ./$(TARGET))
+
+.PHONY: all move_src clean
+.FORCE:
