@@ -1,0 +1,256 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		586F94D7171AD45D00E3C235 /* Display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 586F94D3171AD45D00E3C235 /* Display.cpp */; };
+		586F94D8171AD45D00E3C235 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 586F94D5171AD45D00E3C235 /* Triangle.cpp */; };
+		58ED3BA3171AD32B00450165 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58ED3BA2171AD32B00450165 /* main.cpp */; };
+		58ED3BB9171AD3AC00450165 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BB8171AD3AC00450165 /* OpenGL.framework */; };
+		58ED3BBC171AD3E600450165 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BBA171AD3E600450165 /* libGLEW.a */; };
+		58ED3BBD171AD3E600450165 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BBB171AD3E600450165 /* libglfw.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58ED3B9D171AD32B00450165 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		586F94D3171AD45D00E3C235 /* Display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Display.cpp; sourceTree = "<group>"; };
+		586F94D4171AD45D00E3C235 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+		586F94D5171AD45D00E3C235 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		586F94D6171AD45D00E3C235 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		586F94D9171AD48300E3C235 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
+		58ED3B9F171AD32B00450165 /* Land Generator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Land Generator"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58ED3BA2171AD32B00450165 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		58ED3BB8171AD3AC00450165 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		58ED3BBA171AD3E600450165 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../usr/local/Cellar/glew/1.9.0/lib/libGLEW.a; sourceTree = "<group>"; };
+		58ED3BBB171AD3E600450165 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = ../../../../usr/local/Cellar/glfw/2.7.7/lib/libglfw.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58ED3B9C171AD32B00450165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58ED3BBC171AD3E600450165 /* libGLEW.a in Frameworks */,
+				58ED3BBD171AD3E600450165 /* libglfw.a in Frameworks */,
+				58ED3BB9171AD3AC00450165 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58ED3B96171AD32B00450165 = {
+			isa = PBXGroup;
+			children = (
+				58ED3BBA171AD3E600450165 /* libGLEW.a */,
+				58ED3BBB171AD3E600450165 /* libglfw.a */,
+				58ED3BB8171AD3AC00450165 /* OpenGL.framework */,
+				58ED3BA1171AD32B00450165 /* Land Generator */,
+				58ED3BA0171AD32B00450165 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58ED3BA0171AD32B00450165 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58ED3B9F171AD32B00450165 /* Land Generator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58ED3BA1171AD32B00450165 /* Land Generator */ = {
+			isa = PBXGroup;
+			children = (
+				586F94D9171AD48300E3C235 /* Makefile */,
+				586F94D3171AD45D00E3C235 /* Display.cpp */,
+				586F94D4171AD45D00E3C235 /* Display.h */,
+				586F94D5171AD45D00E3C235 /* Triangle.cpp */,
+				586F94D6171AD45D00E3C235 /* Triangle.h */,
+				58ED3BA2171AD32B00450165 /* main.cpp */,
+			);
+			path = "Land Generator";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58ED3B9E171AD32B00450165 /* Land Generator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58ED3BA8171AD32B00450165 /* Build configuration list for PBXNativeTarget "Land Generator" */;
+			buildPhases = (
+				58ED3B9B171AD32B00450165 /* Sources */,
+				58ED3B9C171AD32B00450165 /* Frameworks */,
+				58ED3B9D171AD32B00450165 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Land Generator";
+			productName = "Land Generator";
+			productReference = 58ED3B9F171AD32B00450165 /* Land Generator */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58ED3B97171AD32B00450165 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = ASPCartman;
+			};
+			buildConfigurationList = 58ED3B9A171AD32B00450165 /* Build configuration list for PBXProject "Land Generator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 58ED3B96171AD32B00450165;
+			productRefGroup = 58ED3BA0171AD32B00450165 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58ED3B9E171AD32B00450165 /* Land Generator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58ED3B9B171AD32B00450165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58ED3BA3171AD32B00450165 /* main.cpp in Sources */,
+				586F94D7171AD45D00E3C235 /* Display.cpp in Sources */,
+				586F94D8171AD45D00E3C235 /* Triangle.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		58ED3BA6171AD32B00450165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		58ED3BA7171AD32B00450165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		58ED3BA9171AD32B00450165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/1.9.0/lib,
+					/usr/local/Cellar/glfw/2.7.7/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		58ED3BAA171AD32B00450165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/1.9.0/lib,
+					/usr/local/Cellar/glfw/2.7.7/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58ED3B9A171AD32B00450165 /* Build configuration list for PBXProject "Land Generator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58ED3BA6171AD32B00450165 /* Debug */,
+				58ED3BA7171AD32B00450165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58ED3BA8171AD32B00450165 /* Build configuration list for PBXNativeTarget "Land Generator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58ED3BA9171AD32B00450165 /* Debug */,
+				58ED3BAA171AD32B00450165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58ED3B97171AD32B00450165 /* Project object */;
+}

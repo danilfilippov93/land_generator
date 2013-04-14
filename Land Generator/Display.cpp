@@ -16,9 +16,8 @@ using namespace std;
 
 Display::Display()
 {
-    this->InitGLFW();
-    this->InitWindow();
-    //this->OpenWindow();
+	this->InitGLFW();
+	this->OpenWindow();
 }
 
 void Display::InitGLFW()
@@ -42,17 +41,16 @@ void Display::InitWindow()
     glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 2);
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 1);
-    
-    glfwSetWindowTitle( "My Land" );
-
-    glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 
     glfwEnable( GLFW_STICKY_KEYS );
 }
 
 void Display::UpdateLoop()
 {
-    do{
+	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	do{
         this->Draw();
     } 
     while( glfwGetKey( GLFW_KEY_ESC ) != GLFW_PRESS &&
@@ -60,13 +58,16 @@ void Display::UpdateLoop()
 }
 
 void Display::OpenWindow(){
-    if( !glfwOpenWindow( 600, 400, 0,0,0,0, 32,0, GLFW_WINDOW ) )
+	this->InitWindow();
+
+	if( !glfwOpenWindow( 600, 400, 0,0,0,0, 32,0, GLFW_WINDOW ) )
     {
         glfwTerminate();
         throw runtime_error("Failed in open window");
     }
-    
-    this->InitGLEW();
+	glfwSetWindowTitle( "My Land" );
+
+	this->InitGLEW();
     this->UpdateLoop();
 }
 

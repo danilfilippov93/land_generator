@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:land_generator.xcodeproj">
+      location = "self:Land Generator.xcodeproj">
    </FileRef>
 </Workspace>
