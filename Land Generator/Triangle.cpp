@@ -8,7 +8,7 @@
 #include <glm/glm.hpp>
 
 #include "Triangle.hpp"
-#import "shaderUtils.hpp"
+#include "shaderUtils.hpp"
 
 Triangle::Triangle()
 {

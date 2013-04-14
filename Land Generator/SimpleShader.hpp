@@ -9,7 +9,7 @@
 #ifndef __SimpleShader_H_
 #define __SimpleShader_H_
 
-#import "Shader.hpp"
+#include "Shader.hpp"
 
 
 class SimpleShader : public Shader

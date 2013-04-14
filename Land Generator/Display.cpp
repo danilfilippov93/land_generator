@@ -12,7 +12,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include "Triangle.hpp"
-#import "shaderUtils.hpp"
+#include "shaderUtils.hpp"
 
 using namespace glm;
 using namespace std;

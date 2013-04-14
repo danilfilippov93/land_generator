@@ -1,4 +1,6 @@
 #include <vector>
+#include <cstring>
+
 #include <map>
 
 #include <glm/glm.hpp>
