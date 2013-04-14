@@ -14,7 +14,7 @@ int main(int argc, const char *argv[])
 	display->OpenWindow();
 
 	GameObject *object1 = new GameObject();
-	object1->position = glm::vec3(2, 0, 0);
+	object1->position = glm::vec3(3, 0, 0);
 	display->AddGameObjects(object1);
 
 	GameObject *object = new GameObject();

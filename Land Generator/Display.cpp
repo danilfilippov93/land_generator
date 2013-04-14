@@ -160,6 +160,6 @@ void Display::DrawObject(GameObject *object)
 			(void *) 0            // array buffer offset
 	);
 
-	glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 object
+	glDrawArrays(GL_TRIANGLES, 0, 12*3); // Starting from vertex 0; 3 vertices total -> 1 object
 	glDisableVertexAttribArray(0);
 }
