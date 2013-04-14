@@ -1,8 +1,12 @@
-#include <iostream>
+//#include <iostream>
 #include "Display.hpp"
 
 // Include GLM
 #include <glm/gtc/matrix_transform.hpp>
+
+#ifndef __APPLE__
+#include <stdexcept>
+#endif
 
 using namespace glm;
 using namespace std;
@@ -17,19 +21,19 @@ void Display::InitGLFW()
 {
 	if (!glfwInit())
 	{
-		throw runtime_error("Failed to initialize GLFW");
+		throw std::runtime_error("Failed to initialize GLFW");
 	}
 }
 
 void Display::InitGameObjectsArray()
 {
-	gameObjectsArray = new std::vector<GameObject*>(0);
+	gameObjectsArray = new vector<GameObject*>(0);
 }
 
 void Display::AddGameObjects(GameObject *gameObject)
 {
 	if (gameObject == NULL)
-		throw runtime_error("GameObject == NULL");
+		throw std::runtime_error("GameObject == NULL");
 
 	gameObjectsArray->push_back(gameObject);
 }
