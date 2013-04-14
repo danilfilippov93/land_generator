@@ -5,10 +5,10 @@ class Triangle {
     public:
     Triangle();
     void Draw();
-    void Init();
-    
-    unsigned int vertexArrayID;
+	void InitTriangle();
+
     unsigned int vertexBuffer;
+	unsigned int programID;
 };
 
 #endif

@@ -12,6 +12,7 @@
 int main(int argc, const char * argv[])
 {
 	Display *display = new Display();
+	display->OpenWindow();
     return 0;
 }
 

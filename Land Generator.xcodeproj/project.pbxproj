@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583396C4171AF1FC00DEDDE9 /* shader.fragmentshader in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE21365F2093DB85860FF148 /* shader.fragmentshader */; };
+		583396C5171AF1FC00DEDDE9 /* shader.vertexshader in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE2135C28A75C4918F8BA0CC /* shader.vertexshader */; };
 		586F94D7171AD45D00E3C235 /* Display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 586F94D3171AD45D00E3C235 /* Display.cpp */; };
 		586F94D8171AD45D00E3C235 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 586F94D5171AD45D00E3C235 /* Triangle.cpp */; };
 		58ED3BA3171AD32B00450165 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58ED3BA2171AD32B00450165 /* main.cpp */; };
 		58ED3BB9171AD3AC00450165 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BB8171AD3AC00450165 /* OpenGL.framework */; };
 		58ED3BBC171AD3E600450165 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BBA171AD3E600450165 /* libGLEW.a */; };
 		58ED3BBD171AD3E600450165 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ED3BBB171AD3E600450165 /* libglfw.a */; };
+		BE21303520791D104F6B79AE /* quaternion_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2132B257F4F8F2D8C9901F /* quaternion_utils.cpp */; };
+		BE21317209141008D4C838E6 /* text2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2131773609961CE899ABBA /* text2D.cpp */; };
+		BE213558E2B4CBBB05408431 /* controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2130D4CBB8E90455905537 /* controls.cpp */; };
+		BE2137576136A3C797CBCD2A /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213DBA8A44825A52F2CDDE /* objloader.cpp */; };
+		BE2138A447ABECB32F3D26B2 /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213907E276D264E317B080 /* shader.cpp */; };
+		BE213B06BF23095DB125BCAB /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213F684462E6DF5ADF08E3 /* texture.cpp */; };
+		BE213C844915AE532AF59E61 /* tangentspace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213FC465DE1048915444C4 /* tangentspace.cpp */; };
+		BE213F5382F2CD10F17F71EB /* vboindexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2138653EE9D581EAB153D9 /* vboindexer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58ED3B9D171AD32B00450165 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				583396C4171AF1FC00DEDDE9 /* shader.fragmentshader in CopyFiles */,
+				583396C5171AF1FC00DEDDE9 /* shader.vertexshader in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -38,6 +50,24 @@
 		58ED3BB8171AD3AC00450165 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		58ED3BBA171AD3E600450165 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../usr/local/Cellar/glew/1.9.0/lib/libGLEW.a; sourceTree = "<group>"; };
 		58ED3BBB171AD3E600450165 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = ../../../../usr/local/Cellar/glfw/2.7.7/lib/libglfw.a; sourceTree = "<group>"; };
+		BE21300DA5A5CB9F160280E6 /* objloader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = objloader.hpp; sourceTree = "<group>"; };
+		BE2130D4CBB8E90455905537 /* controls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = controls.cpp; sourceTree = "<group>"; };
+		BE2131773609961CE899ABBA /* text2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = text2D.cpp; sourceTree = "<group>"; };
+		BE2131A4264A62FBA21BB8D2 /* vboindexer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vboindexer.hpp; sourceTree = "<group>"; };
+		BE213260D926243512C89112 /* tangentspace.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tangentspace.hpp; sourceTree = "<group>"; };
+		BE21326C77FFC2F1719E414E /* text2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = text2D.hpp; sourceTree = "<group>"; };
+		BE2132B257F4F8F2D8C9901F /* quaternion_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quaternion_utils.cpp; sourceTree = "<group>"; };
+		BE213456BFEA97BABA0B7667 /* quaternion_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = quaternion_utils.hpp; sourceTree = "<group>"; };
+		BE2135C28A75C4918F8BA0CC /* shader.vertexshader */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = shader.vertexshader; sourceTree = "<group>"; };
+		BE21365F2093DB85860FF148 /* shader.fragmentshader */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = shader.fragmentshader; sourceTree = "<group>"; };
+		BE2137C3A7AC2CA95A85E96C /* controls.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = controls.hpp; sourceTree = "<group>"; };
+		BE2138653EE9D581EAB153D9 /* vboindexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vboindexer.cpp; sourceTree = "<group>"; };
+		BE213907E276D264E317B080 /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		BE213C535E3FAF95CD8DEED7 /* texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = texture.hpp; sourceTree = "<group>"; };
+		BE213D0A9060881105718679 /* shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = shader.hpp; sourceTree = "<group>"; };
+		BE213DBA8A44825A52F2CDDE /* objloader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = objloader.cpp; sourceTree = "<group>"; };
+		BE213F684462E6DF5ADF08E3 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		BE213FC465DE1048915444C4 /* tangentspace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tangentspace.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +112,34 @@
 				586F94D5171AD45D00E3C235 /* Triangle.cpp */,
 				586F94D6171AD45D00E3C235 /* Triangle.h */,
 				58ED3BA2171AD32B00450165 /* main.cpp */,
+				BE21365F2093DB85860FF148 /* shader.fragmentshader */,
+				BE2135C28A75C4918F8BA0CC /* shader.vertexshader */,
+				BE213FA6795F5775A3E43010 /* common */,
 			);
 			path = "Land Generator";
+			sourceTree = "<group>";
+		};
+		BE213FA6795F5775A3E43010 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				BE2132B257F4F8F2D8C9901F /* quaternion_utils.cpp */,
+				BE2131A4264A62FBA21BB8D2 /* vboindexer.hpp */,
+				BE21300DA5A5CB9F160280E6 /* objloader.hpp */,
+				BE2137C3A7AC2CA95A85E96C /* controls.hpp */,
+				BE21326C77FFC2F1719E414E /* text2D.hpp */,
+				BE213907E276D264E317B080 /* shader.cpp */,
+				BE213DBA8A44825A52F2CDDE /* objloader.cpp */,
+				BE2130D4CBB8E90455905537 /* controls.cpp */,
+				BE213C535E3FAF95CD8DEED7 /* texture.hpp */,
+				BE213D0A9060881105718679 /* shader.hpp */,
+				BE2138653EE9D581EAB153D9 /* vboindexer.cpp */,
+				BE2131773609961CE899ABBA /* text2D.cpp */,
+				BE213260D926243512C89112 /* tangentspace.hpp */,
+				BE213FC465DE1048915444C4 /* tangentspace.cpp */,
+				BE213456BFEA97BABA0B7667 /* quaternion_utils.hpp */,
+				BE213F684462E6DF5ADF08E3 /* texture.cpp */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +196,14 @@
 				58ED3BA3171AD32B00450165 /* main.cpp in Sources */,
 				586F94D7171AD45D00E3C235 /* Display.cpp in Sources */,
 				586F94D8171AD45D00E3C235 /* Triangle.cpp in Sources */,
+				BE21303520791D104F6B79AE /* quaternion_utils.cpp in Sources */,
+				BE2138A447ABECB32F3D26B2 /* shader.cpp in Sources */,
+				BE2137576136A3C797CBCD2A /* objloader.cpp in Sources */,
+				BE213558E2B4CBBB05408431 /* controls.cpp in Sources */,
+				BE213F5382F2CD10F17F71EB /* vboindexer.cpp in Sources */,
+				BE21317209141008D4C838E6 /* text2D.cpp in Sources */,
+				BE213C844915AE532AF59E61 /* tangentspace.cpp in Sources */,
+				BE213B06BF23095DB125BCAB /* texture.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +232,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -195,6 +260,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;

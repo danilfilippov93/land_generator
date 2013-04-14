@@ -11,13 +11,14 @@
 // Include GLM
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include "Triangle.h"
+
 using namespace glm;
 using namespace std;
 
 Display::Display()
 {
 	this->InitGLFW();
-	this->OpenWindow();
 }
 
 void Display::InitGLFW()
@@ -45,10 +46,23 @@ void Display::InitWindow()
     glfwEnable( GLFW_STICKY_KEYS );
 }
 
+void Display::OpenWindow(){
+	this->InitWindow();
+
+	if( !glfwOpenWindow( 600, 400, 0,0,0,0, 32,0, GLFW_WINDOW ) )
+	{
+		glfwTerminate();
+		throw runtime_error("Failed in open window");
+	}
+	glfwSetWindowTitle( "My Land" );
+
+	this->InitGLEW();
+	this->UpdateLoop();
+}
+
 void Display::UpdateLoop()
 {
-	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
+	triangle = new Triangle();
 
 	do{
         this->Draw();
@@ -57,22 +71,13 @@ void Display::UpdateLoop()
     glfwGetWindowParam( GLFW_OPENED ) );
 }
 
-void Display::OpenWindow(){
-	this->InitWindow();
 
-	if( !glfwOpenWindow( 600, 400, 0,0,0,0, 32,0, GLFW_WINDOW ) )
-    {
-        glfwTerminate();
-        throw runtime_error("Failed in open window");
-    }
-	glfwSetWindowTitle( "My Land" );
-
-	this->InitGLEW();
-    this->UpdateLoop();
-}
 
 void Display::Draw()
 {
+	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+	triangle->Draw();
     glfwSwapBuffers();
 }
 
