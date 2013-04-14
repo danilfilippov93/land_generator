@@ -19,7 +19,7 @@ protected:
 
 	SimpleShader *shader;
 	glm::mat4 mvp;
-	std::vector<GameObject*> *gameObjectsArray;
+	std::vector<GameObject *> *gameObjectsArray;
 
 private:
 	// Initializations

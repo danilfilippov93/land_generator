@@ -31,7 +31,7 @@ void Display::InitGLFW()
 
 void Display::InitGameObjectsArray()
 {
-	gameObjectsArray = new vector<GameObject*>(0);
+	gameObjectsArray = new vector<GameObject *>(0);
 }
 
 void Display::AddGameObjects(GameObject *gameObject)
@@ -57,9 +57,7 @@ void Display::InitWindow()
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 1);
 
 	glfwEnable(GLFW_STICKY_KEYS);
-	glfwSetMousePos(int(WIDTH/2), int(HEIGHT/2));
-
-
+	glfwSetMousePos(int(WIDTH/ 2), int(HEIGHT/ 2));
 }
 
 void Display::InitShaders()
@@ -118,8 +116,8 @@ void Display::Draw()
 	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	std::vector<GameObject*>::iterator itr;
-	for(itr = gameObjectsArray->begin(); itr != gameObjectsArray->end(); ++itr)
+	std::vector<GameObject *>::iterator itr;
+	for (itr = gameObjectsArray->begin(); itr != gameObjectsArray->end(); ++itr)
 	{
 		DrawObject(*itr);
 	}
