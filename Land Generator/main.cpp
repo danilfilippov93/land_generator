@@ -21,10 +21,10 @@ int main(int argc, const char *argv[])
 	for (int x = 0; x < LIMIT; ++x)
 		for (int y = 0; y < LIMIT; ++y)
 		{
-			float z = float(noise.Noise(double(x), double(y)));
+			float z = float(noise.Noise(double(x) / 10.f, double(y) / 10.f));
 
 			GameObject *object = new GameObject();
-			object->position = glm::vec3(2 * float(x), 2 * float(y), z);
+			object->position = glm::vec3(2 * float(x), 2 * float(y), 10 * z);
 
 			display->AddGameObjects(object);
 		}

@@ -78,7 +78,7 @@ void Display::UpdateModelViewMatrix()
 	mvp = Projection * View * Model; // Remember, matrix multiplication is the other way around
 }
 
-void GLFWCALL Display::ResizeWindow(int x,int y)
+void GLFWCALL Display::ResizeWindow(int x, int y)
 {
 	glfwSetWindowSize(x, y);
 	glViewport(0, 0, x, y);
@@ -101,7 +101,6 @@ void Display::OpenWindow()
 	InitShaders();
 	UpdateModelViewMatrix();
 }
-
 
 
 void Display::Run()
@@ -146,7 +145,7 @@ void Display::DrawObject(GameObject *object)
 	// in the "MVP" uniform
 	glUniformMatrix4fv(shader->modelViewProjectionUniformID, 1, GL_FALSE, &mvpForObject[0][0]);
 
-	glUniform4f(shader->objectColorUniformID,object->position.z/1.f,0,0,1);
+	glUniform4f(shader->objectColorUniformID, object->position.z / 10.f, 0, 0, 1);
 
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, object->vertexBuffer);
@@ -164,6 +163,6 @@ void Display::DrawObject(GameObject *object)
 			(void *) 0            // array buffer offset
 	);
 
-	glDrawArrays(GL_TRIANGLES, 0, 12*3); // Starting from vertex 0; 3 vertices total -> 1 object
+	glDrawArrays(GL_TRIANGLES, 0, 12 * 3); // Starting from vertex 0; 3 vertices total -> 1 object
 	glDisableVertexAttribArray(0);
 }
