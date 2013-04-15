@@ -15,8 +15,10 @@
 class PerlinNoise
 {
 public:
-	PerlinNoise(){};
-	double Noise( double x, double y);
+	PerlinNoise()
+	{
+	};
+	double Noise(double x, double y);
 
 };
 

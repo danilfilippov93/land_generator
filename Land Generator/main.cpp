@@ -7,7 +7,7 @@
 //
 
 #include "Display.hpp"
-#include  "PerlinNoise.h"
+#include "PerlinNoise.hpp"
 
 #define LIMIT 100
 
@@ -24,7 +24,7 @@ int main(int argc, const char *argv[])
 			float z = float(noise.Noise(double(x), double(y)));
 
 			GameObject *object = new GameObject();
-			object->position = glm::vec3(2*float(x),2*float(y),z);
+			object->position = glm::vec3(2 * float(x), 2 * float(y), z);
 
 			display->AddGameObjects(object);
 		}
