@@ -123,7 +123,9 @@ void Display::UpdateLoop()
 void Display::Draw()
 {
 	glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
 
 	std::vector<GameObject *>::iterator itr;
 	for (itr = gameObjectsArray->begin(); itr != gameObjectsArray->end(); ++itr)
@@ -144,12 +146,14 @@ void Display::DrawObject(GameObject *object)
 	// in the "MVP" uniform
 	glUniformMatrix4fv(shader->modelViewProjectionUniformID, 1, GL_FALSE, &mvpForObject[0][0]);
 
+	glUniform4f(shader->objectColorUniformID,object->position.z/1.f,0,0,1);
+
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, object->vertexBuffer);
 	assert(glIsBuffer(object->vertexBuffer) == GL_TRUE);
 
 	// Get a handle for our buffers
-	GLint vertexPosition_modelspaceID = glGetAttribLocation(shader->shaderID, "vertexPosition_modelspace");
+	GLint vertexPosition_modelspaceID = shader->vertexPostitionModelspaceAttributeID;
 
 	glVertexAttribPointer(
 			GLuint(vertexPosition_modelspaceID),

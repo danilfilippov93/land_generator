@@ -20,8 +20,10 @@
 		BE21303520791D104F6B79AE /* quaternion_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2132B257F4F8F2D8C9901F /* quaternion_utils.cpp */; };
 		BE21317209141008D4C838E6 /* text2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2131773609961CE899ABBA /* text2D.cpp */; };
 		BE213558E2B4CBBB05408431 /* controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE2130D4CBB8E90455905537 /* controls.cpp */; };
+		BE2137110D602956D95D1A4C /* PerlinNoise.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE21349830EC20DA7CA6A9B9 /* PerlinNoise.h */; };
 		BE2137576136A3C797CBCD2A /* objloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213DBA8A44825A52F2CDDE /* objloader.cpp */; };
 		BE2138A447ABECB32F3D26B2 /* shaderUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213907E276D264E317B080 /* shaderUtils.cpp */; };
+		BE2139F05DD066B0D5F4D017 /* PerlinNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE21328E80B2E81816B425C0 /* PerlinNoise.cpp */; };
 		BE213A29974F133512D99AD3 /* GL.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE2132789BA2386526129C93 /* GL.hpp */; };
 		BE213B06BF23095DB125BCAB /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213F684462E6DF5ADF08E3 /* texture.cpp */; };
 		BE213C844915AE532AF59E61 /* tangentspace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE213FC465DE1048915444C4 /* tangentspace.cpp */; };
@@ -38,6 +40,7 @@
 				583396C4171AF1FC00DEDDE9 /* shader.fragmentshader in CopyFiles */,
 				583396C5171AF1FC00DEDDE9 /* shader.vertexshader in CopyFiles */,
 				BE213A29974F133512D99AD3 /* GL.hpp in CopyFiles */,
+				BE2137110D602956D95D1A4C /* PerlinNoise.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +68,10 @@
 		BE213260D926243512C89112 /* tangentspace.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tangentspace.hpp; sourceTree = "<group>"; };
 		BE21326C77FFC2F1719E414E /* text2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = text2D.hpp; sourceTree = "<group>"; };
 		BE2132789BA2386526129C93 /* GL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GL.hpp; sourceTree = "<group>"; };
+		BE21328E80B2E81816B425C0 /* PerlinNoise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PerlinNoise.cpp; sourceTree = "<group>"; };
 		BE2132B257F4F8F2D8C9901F /* quaternion_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quaternion_utils.cpp; sourceTree = "<group>"; };
 		BE213456BFEA97BABA0B7667 /* quaternion_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = quaternion_utils.hpp; sourceTree = "<group>"; };
+		BE21349830EC20DA7CA6A9B9 /* PerlinNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinNoise.h; sourceTree = "<group>"; };
 		BE2135C28A75C4918F8BA0CC /* shader.vertexshader */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = shader.vertexshader; sourceTree = "<group>"; };
 		BE21365F2093DB85860FF148 /* shader.fragmentshader */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = shader.fragmentshader; sourceTree = "<group>"; };
 		BE2137C3A7AC2CA95A85E96C /* controls.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = controls.hpp; sourceTree = "<group>"; };
@@ -145,6 +150,8 @@
 				58ED3BA2171AD32B00450165 /* main.cpp */,
 				BE213FA6795F5775A3E43010 /* common */,
 				BE2132789BA2386526129C93 /* GL.hpp */,
+				BE21328E80B2E81816B425C0 /* PerlinNoise.cpp */,
+				BE21349830EC20DA7CA6A9B9 /* PerlinNoise.h */,
 			);
 			path = "Land Generator";
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 				5811D0E0171B18850003B9E3 /* Display.cpp in Sources */,
 				5811D0E1171B18850003B9E3 /* Shader.cpp in Sources */,
 				5811D0E2171B18850003B9E3 /* SimpleShader.cpp in Sources */,
+				BE2139F05DD066B0D5F4D017 /* PerlinNoise.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

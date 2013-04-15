@@ -13,4 +13,6 @@ SimpleShader::SimpleShader() : Shader("shader.vertexshader", "shader.fragmentsha
 	modelViewProjectionUniformID = glGetUniformLocation(shaderID, "MVP");
 	// Get a handle for our buffers
 	vertexPostitionModelspaceAttributeID = glGetAttribLocation(shaderID, "vertexPosition_modelspace");
+
+	objectColorUniformID = glGetUniformLocation(shaderID, "oColor");
 }

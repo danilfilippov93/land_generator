@@ -19,6 +19,7 @@ public:
 
 	GLint modelViewProjectionUniformID;
 	GLint vertexPostitionModelspaceAttributeID;
+	GLint objectColorUniformID;
 };
 
 

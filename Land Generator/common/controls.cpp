@@ -32,7 +32,7 @@ float verticalAngle = 0.0f;
 // Initial Field of View
 float initialFoV = 45.0f;
 
-float speed = 3.0f; // 3 units / second
+float speed = 10.0f; // 3 units / second
 float mouseSpeed = 0.005f;
 
 
@@ -102,7 +102,7 @@ void computeMatricesFromInputs()
 	int width,height;
 	glfwGetWindowSize(&width, &height);
 
-	ProjectionMatrix = glm::perspective(FoV, float(width) / float(height), 0.1f, 100.0f);
+	ProjectionMatrix = glm::perspective(FoV, float(width) / float(height), 0.1f, 10000.0f);
 	// Camera matrix
 	ViewMatrix = glm::lookAt(
 			position,           // Camera is here
