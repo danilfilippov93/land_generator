@@ -7,13 +7,14 @@
 
 #include <math.h>
 #include "PerlinNoise.hpp"
+#include <stdlib.h>
 
 double Noise(int x, int y)
 {
 	static int randomInteger = 0;
 	if (randomInteger == 0)
 	{
-		randomInteger = arc4random() % 50 + 10;
+		randomInteger = random() % 50 + 10;
 	}
 
 	int n = x + y * randomInteger;

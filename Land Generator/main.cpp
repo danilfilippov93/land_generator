@@ -13,6 +13,7 @@
 
 int main(int argc, const char *argv[])
 {
+	srandom(time(NULL));
 	Display *display = new Display();
 	display->OpenWindow();
 
