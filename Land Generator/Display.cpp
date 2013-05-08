@@ -52,7 +52,7 @@ void Display::InitGLEW()
 
 void Display::InitWindow()
 {
-	glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
+//	glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 2);
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 1);
 
@@ -145,7 +145,7 @@ void Display::DrawObject(GameObject *object)
 	// in the "MVP" uniform
 	glUniformMatrix4fv(shader->modelViewProjectionUniformID, 1, GL_FALSE, &mvpForObject[0][0]);
 
-	glUniform4f(shader->objectColorUniformID, object->position.z / 10.f, 0, 0, 1);
+	glUniform4f(shader->objectColorUniformID, object->position.z / 20.f, 0, 0, 1);
 
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, object->vertexBuffer);
