@@ -3,15 +3,16 @@
 
 #include "GL.hpp"
 
-class GameObject
+class Cube
 {
 public:
-	GameObject();
+	Cube();
 	void InitTriangle();
 
 	GLuint vertexBuffer;
 
 	glm::vec3 position;
+	glm::vec4 color;
 };
 
 #endif

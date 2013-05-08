@@ -6,54 +6,55 @@
 // Include GLM
 #include <glm/glm.hpp>
 
-#include "GameObject.hpp"
+#include "Cube.hpp"
 
-GameObject::GameObject()
+Cube::Cube()
 {
 	vertexBuffer = 0;
 	position = glm::vec3(0, 0, 0);
+	color = glm::vec4(0, 0, 0, 1);
 	InitTriangle();
 }
 
-void GameObject::InitTriangle()
+void Cube::InitTriangle()
 {
 	static const GLfloat g_vertex_buffer_data[] = {
-			-1.0f,-1.0f,-1.0f, // triangle 1 : begin
-			-1.0f,-1.0f, 1.0f,
+			-1.0f, -1.0f, -1.0f, // triangle 1 : begin
+			-1.0f, -1.0f, 1.0f,
 			-1.0f, 1.0f, 1.0f, // triangle 1 : end
-			1.0f, 1.0f,-1.0f, // triangle 2 : begin
-			-1.0f,-1.0f,-1.0f,
-			-1.0f, 1.0f,-1.0f, // triangle 2 : end
-			1.0f,-1.0f, 1.0f,
-			-1.0f,-1.0f,-1.0f,
-			1.0f,-1.0f,-1.0f,
-			1.0f, 1.0f,-1.0f,
-			1.0f,-1.0f,-1.0f,
-			-1.0f,-1.0f,-1.0f,
-			-1.0f,-1.0f,-1.0f,
+			1.0f, 1.0f, -1.0f, // triangle 2 : begin
+			-1.0f, -1.0f, -1.0f,
+			-1.0f, 1.0f, -1.0f, // triangle 2 : end
+			1.0f, -1.0f, 1.0f,
+			-1.0f, -1.0f, -1.0f,
+			1.0f, -1.0f, -1.0f,
+			1.0f, 1.0f, -1.0f,
+			1.0f, -1.0f, -1.0f,
+			-1.0f, -1.0f, -1.0f,
+			-1.0f, -1.0f, -1.0f,
 			-1.0f, 1.0f, 1.0f,
-			-1.0f, 1.0f,-1.0f,
-			1.0f,-1.0f, 1.0f,
-			-1.0f,-1.0f, 1.0f,
-			-1.0f,-1.0f,-1.0f,
+			-1.0f, 1.0f, -1.0f,
+			1.0f, -1.0f, 1.0f,
+			-1.0f, -1.0f, 1.0f,
+			-1.0f, -1.0f, -1.0f,
 			-1.0f, 1.0f, 1.0f,
-			-1.0f,-1.0f, 1.0f,
-			1.0f,-1.0f, 1.0f,
+			-1.0f, -1.0f, 1.0f,
+			1.0f, -1.0f, 1.0f,
 			1.0f, 1.0f, 1.0f,
-			1.0f,-1.0f,-1.0f,
-			1.0f, 1.0f,-1.0f,
-			1.0f,-1.0f,-1.0f,
+			1.0f, -1.0f, -1.0f,
+			1.0f, 1.0f, -1.0f,
+			1.0f, -1.0f, -1.0f,
 			1.0f, 1.0f, 1.0f,
-			1.0f,-1.0f, 1.0f,
+			1.0f, -1.0f, 1.0f,
 			1.0f, 1.0f, 1.0f,
-			1.0f, 1.0f,-1.0f,
-			-1.0f, 1.0f,-1.0f,
+			1.0f, 1.0f, -1.0f,
+			-1.0f, 1.0f, -1.0f,
 			1.0f, 1.0f, 1.0f,
-			-1.0f, 1.0f,-1.0f,
+			-1.0f, 1.0f, -1.0f,
 			-1.0f, 1.0f, 1.0f,
 			1.0f, 1.0f, 1.0f,
 			-1.0f, 1.0f, 1.0f,
-			1.0f,-1.0f, 1.0f
+			1.0f, -1.0f, 1.0f
 	};
 
 	// Generate 1 buffer, put the resulting identifier in vertexBuffer

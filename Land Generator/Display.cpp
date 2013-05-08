@@ -31,13 +31,13 @@ void Display::InitGLFW()
 
 void Display::InitGameObjectsArray()
 {
-	gameObjectsArray = new vector<GameObject *>(0);
+	gameObjectsArray = new vector<Cube *>(0);
 }
 
-void Display::AddGameObjects(GameObject *gameObject)
+void Display::AddGameObject(Cube *gameObject)
 {
 	if (gameObject == NULL)
-		throw std::runtime_error("GameObject == NULL");
+		throw std::runtime_error("Cube == NULL");
 
 	gameObjectsArray->push_back(gameObject);
 }
@@ -72,10 +72,9 @@ void Display::UpdateModelViewMatrix()
 	mat4 Projection = getProjectionMatrix();
 	// Camera matrix
 	mat4 View = getViewMatrix();
-	// Model matrix : an identity matrix (model will be at the origin)
-	mat4 Model = mat4(1.0f);
-	// Our ModelViewProjection : multiplication of our 3 matrices
-	mvp = Projection * View * Model; // Remember, matrix multiplication is the other way around
+
+	// Our ModelViewProjection : multiplication of our 2 matrices
+	mvp = Projection * View; // Remember, matrix multiplication is the other way around
 }
 
 void GLFWCALL Display::ResizeWindow(int x, int y)
@@ -126,7 +125,7 @@ void Display::Draw()
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 
-	std::vector<GameObject *>::iterator itr;
+	std::vector<Cube *>::iterator itr;
 	for (itr = gameObjectsArray->begin(); itr != gameObjectsArray->end(); ++itr)
 	{
 		DrawObject(*itr);
@@ -135,17 +134,18 @@ void Display::Draw()
 	glfwSwapBuffers();
 }
 
-void Display::DrawObject(GameObject *object)
+void Display::DrawObject(Cube *object)
 {
 	glUseProgram(shader->shaderID);
 
 	mat4 mvpForObject = translate(mvp, object->position);
+	mvpForObject = glm::scale(mvpForObject, vec3(1.f, 1.f, 10.f));
 
 	// Send our transformation to the currently bound shader,
 	// in the "MVP" uniform
 	glUniformMatrix4fv(shader->modelViewProjectionUniformID, 1, GL_FALSE, &mvpForObject[0][0]);
 
-	glUniform4f(shader->objectColorUniformID, object->position.z / 20.f, 0, 0, 1);
+	glUniform4f(shader->objectColorUniformID, object->color.x, object->color.y, object->color.z, object->color.w);
 
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, object->vertexBuffer);

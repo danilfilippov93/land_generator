@@ -4,22 +4,22 @@
 #include <glm/glm.hpp>
 #include "SimpleShader.hpp"
 #include <vector>
-#include "GameObject.hpp"
+#include "Cube.hpp"
 
 class Display
 {
 public:
 	Display();
 	void OpenWindow();
-	void AddGameObjects(GameObject *gameObject);
+	void AddGameObject(Cube *gameObject);
 	void Run();
 
 protected:
 	void Draw();
-	static void GLFWCALL ResizeWindow(int x,int y);
+	static void GLFWCALL ResizeWindow(int x, int y);
 	SimpleShader *shader;
 	glm::mat4 mvp;
-	std::vector<GameObject *> *gameObjectsArray;
+	std::vector<Cube *> *gameObjectsArray;
 
 private:
 	// Initializations
@@ -32,7 +32,7 @@ private:
 	// Update
 	void UpdateLoop();
 	void UpdateModelViewMatrix();
-	void DrawObject(GameObject *object);
+	void DrawObject(Cube *object);
 
 
 };
